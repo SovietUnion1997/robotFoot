@@ -10,7 +10,7 @@ IP = "169.254.50.227"  # Replace here with your NaoQi's IP address.
 PORT = 9559
 
 tts = ALProxy("ALTextToSpeech", IP, 9559)
-tts.setLanguage('English')
+# tts.setLanguage('English')
 tts.say("Hello")
 
 ## 测试代码
@@ -43,6 +43,8 @@ while raw_input('是否进入学习模式y/n:') == 'y':
     print('正在进行学习...')
     tts.say('start learning')
     tts.say('please, input the name')
+   # name = raw_input('input the name:').decode('gbk').encode('utf-8')
+  #  name = input('input the name:').decode('utf-8').encode('utf-8')
     name = raw_input('input the name:')
     for i in range(10):
         time.sleep(0.05)
@@ -116,7 +118,7 @@ while len(Name1)<3:
         
     except Exception, e:
       print "faces detected, but it seems getData is invalid. ALValue ="
-      print val+/
+      print val
       print "Error msg %s" % (str(e))
   else:
     print "No face detected"
